@@ -1,0 +1,38 @@
+
+Sorry about the weird filename, but I wanted to make sure that this got read.
+
+This program is built to find a solution to the missionaries and cannibals problem. (see 
+https://en.wikipedia.org/wiki/Missionaries_and_cannibals_problem)
+The river is represented as '_', the boat as 'u', missionaries as 'M', and cannibals as 'C'.
+When run, the program outputs either each state of the puzzle from the start to victory or the message 
+that it is unsolvable.
+
+To change the puzzle, simply edit the string in Main.java. (Main is one line.)
+It will work for any number of missionaries and cannibals and any number of landmasses (i.e. more 
+'_'s - multiple underscores means that there is some place to stop in middle of the river, an island basically), 
+and bigger boats can be implemented by changing boatSize in MissionariesAndCannibalsNode.java
+ 
+The program was written as a weekly assignment in spring 2019.
+This is not the original repository, because that one has a confusing name on orders from the professor 
+to whom the project was submitted.
+I have not changed a single line from the way it was at the time, except I've added this explanation.
+
+Here ends the TLDR.
+
+
+
+
+
+The program works as follows:
+
+We view each possible state of the game (i.e. the positions of the missionaries, cannibals, boat, etc.) as a node
+in a tree. 
+
+MissionariesAndCannibalsNode is used to represent each such state. This has methods for finding its parents
+or children in the tree, whether it is a loss, and whether it is a win.
+
+MissionariesAndCannibalsPuzzleSearch creates and searches through each possible move until it finds a solution or 
+exausts all possible moves.
+
+The interfaces are really unneccesary. They exist because the assignment asked for them.
+
