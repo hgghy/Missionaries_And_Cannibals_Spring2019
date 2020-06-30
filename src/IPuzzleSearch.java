@@ -1,5 +1,5 @@
 
 public interface IPuzzleSearch
 {
-	void search(INode startingNode);
+	String search(INode startingNode);
 }

@@ -7,17 +7,20 @@ The river is represented as '_', the boat as 'u', missionaries as 'M', and canni
 When run, the program outputs either each state of the puzzle from the start to victory or the message 
 that it is unsolvable.
 
-To change the puzzle, simply edit the string in Main.java. (Main is one line.)
+To change the puzzle, simply edit the startingState string in Main.java. There is only one string in the file.
 It will work for any number of missionaries and cannibals and any number of landmasses (i.e. more 
 '_'s - multiple underscores means that there is some place to stop in middle of the river, an island basically), 
-and bigger boats can be implemented by changing boatSize in MissionariesAndCannibalsNode.java
+and bigger boats can be actualized by changing boatSize in MissionariesAndCannibalsNode.java
+
+The startingState string currently reads '_uMMCC', the classic version of the problem. The soution is found immediately. 
+There are other problems that take longer to solve, like '__uMMMMMMMMMMMMMMMMMMMMCCCCCCCCCCCCCCCCCCCC' which took 
+my computer about 15 seconds. Note that while the traditional problem can't be solved with more than 3 pairs of MC, 
+the above problem has an island in the middle of the river. (two '_'s)
  
 The program was written as a weekly assignment in spring 2019.
 This is not the original repository, because that one has a confusing name on orders from the professor 
 to whom the project was submitted.
-I have not changed a single line from the way it was at the time, except I've added this explanation.
-
-Here ends the TLDR.
+I have edited it to simplify some code, refactor, and add comments. Functionality has not been changed.
 
 
 
@@ -33,6 +36,8 @@ or children in the tree, whether it is a loss, and whether it is a win.
 
 MissionariesAndCannibalsPuzzleSearch creates and searches through each possible move until it finds a solution or 
 exausts all possible moves.
+Note that 'move' really means 'move that results in a unexplored state', since there are an infinite number of moves: 
+'_uMMCC' can lead to 'MCu_MC' which can lead right back, and so on.
 
-The interfaces are really unneccesary. They exist because the assignment asked for them.
-
+The interfaces are really unneccesary. They exist because the assignment asked for them. 
+The same goes for getHValue() and getGValue().

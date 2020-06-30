@@ -9,6 +9,9 @@ public interface INode
 	List<INode> getParents(); // gets all nodes through which this node was discovered
 	void addParent(INode parent); // adds a parent to an existing node
 	boolean isSolution(); // true if this node is a solution of the puzzle, false otherwise
+	
+	// the professor told us to include the following two methods, though we were not to implement them in this assignment.
+	// interestingly, we never did end up making them.
 	double getHValue() throws Exception; // not yet implemented
 	double getGValue() throws Exception; // not yet implemented
 }
